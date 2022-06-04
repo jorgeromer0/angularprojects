@@ -1,0 +1,25 @@
+<!-- <div class="menu-bar">
+  <li><a id="register_link"  routerLinkActive="active"></a></li>
+
+</div> -->
+
+<div  style="background-image: url('https://wallpaperaccess.com/full/340434.png');height:'1000px';">
+
+
+  <div class="login-page"   >
+    <div class="form" >
+  
+      <form class="login-form"  #loginForm="ngForm" (ngSubmit)="onSubmit()" >
+        <input type="email" name="email" [(ngModel)]="email" placeholder="Email"/>
+        <input type="password" name="password" [(ngModel)]="password" placeholder="Password"/>
+        <button  >login</button>
+        <p class="text-danger" *ngIf="emailError"><strong>{{emailError}}</strong></p>  
+        <p class="text-danger" *ngIf="passwdError"><strong>{{passwdError}}</strong></p>  
+      
+      </form>
+
+    </div>
+    <button type="button" class="btn btn-primary" [routerLink]="['../register']" >Register</button>
+
+  </div>
+</div>

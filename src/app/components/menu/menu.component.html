@@ -1,0 +1,36 @@
+<!-- <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <ul>
+      <li><a [routerLink]="['/sobre-mi']" [routerLinkActive]="['actived']">Sobre mí</a></li>
+      <li><a [routerLink]="['/proyecto']" [routerLinkActive]="['actived']">Proyecto</a></li>
+      <li id="logo"><a href="#">JR</a></li>
+      <li><a [routerLink]="['/create-proyecto']" [routerLinkActive]="['actived']">Crear Proyecto</a></li>
+      <li><a [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Contacto</a></li>
+      <li>
+        <div ngbDropdown  >
+          <a  id="dropdownBasic1" ngbDropdownToggle>{{email}}</a>
+          <div ngbDropdownMenu  class="custom-dropdown text-color">
+            <h6  ngbDropdownItem id="logout" (click)="logout()" >Log Out</h6>
+          </div>
+        </div>
+        </li>
+    </ul>
+  </nav>
+  </header> -->
+  
+  <div class="menu-bar">
+    <ul>
+  
+      <li><a [routerLink]="['/sobre-mi']" [routerLinkActive]="['actived']" >Sobre mí</a></li>
+      <li><a [routerLink]="['/proyecto']" [routerLinkActive]="['actived']">Proyecto</a></li>
+      <li id="logo"><a href="#">JR</a></li>
+      <li><a [routerLink]="['/create-proyecto']" [routerLinkActive]="['actived']">Crear Proyecto</a></li>
+      <li><a [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Contacto</a></li>
+      <li *ngIf="isLogged">
+      
+            <h6  ngbDropdownItem id="logout" (click)="logout()" >Salir: {{email}}</h6>
+          
+    </li>
+    
+    </ul>
+  </div>

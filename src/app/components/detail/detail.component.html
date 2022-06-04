@@ -1,0 +1,40 @@
+
+<app-menu></app-menu>
+
+
+<div class="container" *ngIf="projecto">
+
+	<div class="image" *ngIf="projecto.url">
+		<img src="{{projecto.url}}"/>
+	</div>
+	<div class="data">
+		<h1>{{projecto.name}}</h1>
+		<h3>{{projecto.description}}</h3>
+		<p>{{projecto.category}}</p>
+		<p>{{projecto.langs}}</p>
+		<!-- <p>hola {{projecto.projecto}}</p> -->
+		<a href={{projecto.projecto}} target="_blank">Url Projecto </a>
+
+<!-- <p *ngIf="confirm == false">
+	<a [routerLink]="['/editar-proyecto', projecto._id]" class="button-edit">Editar</a>
+	<a  (click)="deleteProject(projecto._id)" class="button-delete">Borrar</a>
+</p>
+
+<p *ngIf="confirm == true">
+	<a [routerLink]="['/editar-proyecto', projecto._id]" class="button-edit">Cancelar</a>
+	<a  (click)="deleteProject(projecto._id)" class="button-delete">Eliminar definitivamente</a>
+</p> -->
+
+
+<p *ngIf="confirm == false">
+			<a [routerLink]="['/editar-proyecto', projecto._id]" class="button-edit">Editar</a>
+			<a (click)="setConfirm(true)" class="button-delete">Borrar</a>
+		</p> 
+
+		 <p *ngIf="confirm == true">
+			<span class="confirm">¿Estas seguro de eliminar este proyecto?</span>
+			<a (click)="setConfirm(false)" class="button-edit">Cancelar</a>
+			<a (click)="deleteProject(projecto._id)" class="button-delete">Eliminar definitivamente</a>
+		</p>
+	</div>
+</div>

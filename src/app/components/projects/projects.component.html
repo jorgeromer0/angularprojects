@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+
+
+<div class="container">
+	<div class="row">
+	<h2>Projectos</h2>
+	<input type="text" name="searchPlaca" id="searchPlaca" [(ngModel)]="criteri"/>
+	
+	<ul>
+		<li  *ngFor="let project of projecto| filterProject:criteri"   class="project">
+			<a [routerLink]="['/proyecto', project[1]._id]">
+			
+				<div class="card" style="width: 18rem;">
+					<img src="{{project[1].url}}" class="card-img-top" alt="...">
+					<div class="card-body">
+					  <h5 class="card-title">{{project[1].name}}	</h5>
+					  <p class="card-text"> {{project[1].category}}</p>
+					
+
+				
+			
+				  </div>
+				  </div>
+
+			</a>
+			
+		</li>
+	</ul>
+</div>
+</div>

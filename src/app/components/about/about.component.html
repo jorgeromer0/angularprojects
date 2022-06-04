@@ -1,0 +1,48 @@
+<app-menu></app-menu>
+<div class="container">
+
+<div id="title" [ngStyle]="{'background-color':'#F2F3B6'}">
+    <h1>{{title}}</h1>
+    <h2>{{subtitle}}</h2>
+    <p>{{email}}</p>
+
+</div>
+
+<article class="about">
+    <h2>Sobre mi</h2>
+    <p>
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales eros ut turpis vestibulum efficitur. Aenean
+        id diam a turpis dapibus pharetra posuere ac purus. Sed id massa dui. Integer congue ex sit amet justo accumsan
+        malesuada. Fusce aliquet justo eget lorem faucibus pellentesque. Donec aliquet nibh sit amet arcu facilisis
+        cursus. Donec quam orci, dign<strong [ngClass]="{'rojo': flag, 'azul': !flag}">
+            Hola
+        </strong>issim eu dictum id, commodo eu arcu. Sed ornare, eros eu dignissim sagittis, ipsum
+        nunc varius lectus, vitae ornare sem ipsum nec quam. Fusce lacinia odio vel arcu dictum, vitae vestibulum odio
+        bibendum. Mauris non erat et libero ullamcorper cursus. Ut vel placerat orci. Morbi dignissim tellus et neque
+        posuere, eget euismod mauris placerat. Nunc bibendum dolor nisl, et suscipit nibh suscipit sed. In ut vulputate
+        tortor, ut rhoncus lorem. Nullam vehicula sollicitudin turpis ut consequat.
+    </p>
+
+    <button (click)="cambiarFlag()">Cambiar clase</button>
+
+    <h2>LENGUAJES QUE MÁS HE UTILIZADO</h2>
+    <ngx-charts-pie-chart
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="single"
+    [gradient]="gradient"
+    [labels]="showLabels"
+    [doughnut]="isDoughnut"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)"
+    >
+  </ngx-charts-pie-chart>
+
+
+</article>
+
+
+
+</div>
