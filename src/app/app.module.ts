@@ -21,7 +21,7 @@ import { AuthComponent } from './components/auth/auth.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UserComponent } from './user/user.component';
+import { UserComponent } from './components/user/user.component';
 
 
 @NgModule({
