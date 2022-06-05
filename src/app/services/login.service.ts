@@ -84,12 +84,16 @@ isLogged():boolean{
   register(userAuth:User):Observable<User>{
     let usuario={...userAuth,returnSecureToken : true}
 
+    console.log(usuario);
+    
     return this.http.post<{email:string,idToken:string,localId:string,displayName:string,expiresIn:string}>(this.registerUrl,JSON.stringify(usuario),this.httpOptions).pipe(
     map(response=>{
         this.saveLoginData(response.localId,response.email,response.displayName,response.idToken,response.expiresIn);
         this.logged.next(true);
-        
+        console.log(usuario);        
         return usuario;
+
+        
       }),
       catchError((resp:HttpErrorResponse)=>throwError(()=>new Error(`Error de registro: ${resp.message}`)))
     )
